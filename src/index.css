@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel .thumbs{
+    text-align: center;
+} 
+.featchersItem{
+    padding: 100px 0px;
+    background: linear-gradient(rgba(0, 0, 0, 0.774),rgba(0, 0, 0, 0.774)),url(../src/assets/home/featured.jpg);
+    background-repeat: no-repeat;
+    background-position: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
