@@ -5,6 +5,7 @@ import routes from './Route/Routes.jsx'
 import './index.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import 'react-tabs/style/react-tabs.css';
 
 
 
