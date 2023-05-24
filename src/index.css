@@ -13,3 +13,26 @@
     background-size: cover;
     background-attachment: fixed;
 }
+.react-tabs__tab-list{
+    border-bottom: 1px!important;
+}
+.react-tabs__tab--selected {
+    margin: 20px 0px;
+    border-color: #aaa;
+    color: #BB8506!important;
+    border: 3px solid BB8506!important;
+    border-radius: 0px !important;
+}
+.react-tabs__tab {
+    border: 1px solid gray!important;
+}
+.react-tabs__tab {
+    display: inline-block;
+    border: 0px !important;
+    border-bottom: none;
+    bottom: 0px!important;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
