@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import useCart from '../Hooks/useCart';
 
 const Navbar = () => {
     const {user,logout} = useContext(AuthContext)
+    const [cart] = useCart()
+
+
     const navOptions = <>
     
                 
@@ -41,6 +47,11 @@ const Navbar = () => {
             <div className="navbar-end">
                 <a className="btn">Login</a>
             </div>}
+            {/* cart */}
+            <div className="mx-4 gap-2">
+                <Link to='/' className='flex gap-2'><FontAwesomeIcon className='text-white' icon={faCartShopping}/>
+                <div className="badge badge-secondary">{cart?.length || 0}</div></Link>
+            </div>
             </div>
     );
 };

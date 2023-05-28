@@ -96,7 +96,7 @@ const AuthProvider = ({children}) => {
             } 
           });
         return ()=>{
-            unSubscribe()
+          return  unSubscribe()
         }
     },[])
 

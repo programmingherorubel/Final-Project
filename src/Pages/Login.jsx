@@ -15,7 +15,8 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const form = location.state?.from?.pathname
-    console.log(user)
+
+    
     
     useEffect(()=>{
         loadCaptchaEnginge(4); 
@@ -56,7 +57,7 @@ const Login = () => {
                         <button onClick={handelValidateCaptcha} className='btn btn-success mt-1 btn-xs'>Validate</button>
                     </div>
                     {error && <small className='text-red-700'>{error}</small>}
-                    <div className='text-center mt-5 mb-10'><button disabled={disabled} type='submit' className='text-center w-full font-medium text-xl py-2 rounded text-white px-4 bg-[#D1A054]'>{disabled ? 'Input valid captcha' : 'Sign In'}</button></div>
+                    <div className='text-center mt-5 mb-10'><button disabled={false} type='submit' className='text-center w-full font-medium text-xl py-2 rounded text-white px-4 bg-[#D1A054]'>Sign In</button></div>
                 </form>
                 </div>
             </div>
