@@ -19,6 +19,7 @@ const Navbar = () => {
                 <li><Link to='/Login'>Login</Link></li>
                 <li><Link to='/demo'>Demo</Link></li>
                 {user?.displayName && <li><Link to=''>{user.displayName}</Link></li>}
+                <li><Link to='/dashbord/mycart'>Deshbord</Link></li>
 
                 
                 </>

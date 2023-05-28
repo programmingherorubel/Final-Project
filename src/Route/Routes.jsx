@@ -7,6 +7,8 @@ import Login from "../Pages/Login";
 import SingUp from "../Pages/SingUp";
 import Demo from "../Components/Demo";
 import RequiredRoute from "./RequiredRoute";
+import DashbordLayout from "../Pages/DashbordLayout";
+import MyCart from "../Pages/MyCart";
 
 const routes = createBrowserRouter(
     [
@@ -38,6 +40,16 @@ const routes = createBrowserRouter(
                     path:'/demo',
                     element:<RequiredRoute><Demo/></RequiredRoute>
                 },
+            ]
+        },
+        {
+            path:'/dashbord',
+            element:<DashbordLayout></DashbordLayout>,
+            children:[
+                {
+                    path:'mycart',
+                    element:<MyCart></MyCart>
+                }
             ]
         }
     ]
