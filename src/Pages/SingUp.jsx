@@ -6,13 +6,14 @@ import bg from '../assets/others/authbg.png'
 import { AuthContext } from '../Providers/AuthProvider';
 
 const SingUp = () => {
-    const {RegForm,error,user} = useContext(AuthContext)
+    const {RegForm,error,googleSingIn} = useContext(AuthContext)
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const [disabled,setDisabled] = useState(true)
     const capthaRef = useRef(null)
     const onSubmit = data => {
         RegForm(data.email,data.password,data.name)
+        reset()
     };
 
     
@@ -40,6 +41,7 @@ const SingUp = () => {
                 {error && <small className='text-red-700'>{error}</small>}
                 <div className='text-center mt-5 mb-10'><button type='submit' className='text-center w-full font-medium text-xl py-2 rounded text-white px-4 bg-[#D1A054]'>Sing Up</button></div>
             </form>
+            <div className='text-center'><button onClick={()=>googleSingIn()} className='text-center w-full font-medium text-xl py-2 rounded text-white px-4 bg-[#D1A054]'>Google SingIn</button></div>
             </div>
             <div className="text-center lg:text-left">
             <img src={loginimg} alt="" />

@@ -9,7 +9,7 @@ const FoodCard = ({item}) => {
     const {name,recipe,image,price,_id} = item || {}
     const location = useLocation()
     const navigate = useNavigate()
-    const [refetch] = useCart()
+    const [,refetch] = useCart()
     
 
   const addToCart = item =>{

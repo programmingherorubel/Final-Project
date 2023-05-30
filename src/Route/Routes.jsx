@@ -9,6 +9,7 @@ import Demo from "../Components/Demo";
 import RequiredRoute from "./RequiredRoute";
 import DashbordLayout from "../Pages/DashbordLayout";
 import MyCart from "../Pages/MyCart";
+import AllUsers from "../Pages/AllUsers";
 
 const routes = createBrowserRouter(
     [
@@ -44,12 +45,16 @@ const routes = createBrowserRouter(
         },
         {
             path:'/dashbord',
-            element:<DashbordLayout></DashbordLayout>,
+            element:<RequiredRoute><DashbordLayout></DashbordLayout></RequiredRoute>,
             children:[
                 {
                     path:'mycart',
                     element:<MyCart></MyCart>
-                }
+                },
+                {
+                    path:'/dashbord/users',
+                    element:<AllUsers></AllUsers>
+                },
             ]
         }
     ]

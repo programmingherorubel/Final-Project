@@ -18,8 +18,7 @@ const Navbar = () => {
                 <li><Link to='/order/salad'>Order</Link></li>
                 <li><Link to='/Login'>Login</Link></li>
                 <li><Link to='/demo'>Demo</Link></li>
-                {user?.displayName && <li><Link to=''>{user.displayName}</Link></li>}
-                <li><Link to='/dashbord/mycart'>Deshbord</Link></li>
+                {user?.email&&<li><Link to='/dashbord/mycart'>Deshbord</Link></li>}
 
                 
                 </>
@@ -50,7 +49,7 @@ const Navbar = () => {
             </div>}
             {/* cart */}
             <div className="mx-4 gap-2">
-                <Link to='/' className='flex gap-2'><FontAwesomeIcon className='text-white' icon={faCartShopping}/>
+                <Link to='/dashbord/mycart' className='flex gap-2'><FontAwesomeIcon className='text-white' icon={faCartShopping}/>
                 <div className="badge badge-secondary">{cart?.length || 0}</div></Link>
             </div>
             </div>

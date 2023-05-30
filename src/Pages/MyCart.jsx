@@ -6,7 +6,7 @@ import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 
 const MyCart = () => {
-    const [cart] = useCart()
+    const [cart,refetch] = useCart()
     const total = cart.reduce((sum,item)=> item.price + sum,0)
     const deleteProduct = (id)=>{
         const deleteData = confirm('are you sure you want to delete this Product?')
@@ -16,7 +16,19 @@ const MyCart = () => {
         })
         .then(res => res.json())
         .then(data => {
-            toast.success('delete Success')
+            if(data.deletedCount){
+                refetch()
+                toast.success('data delete successfull', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
+            }
         })
         }
     }
@@ -25,7 +37,7 @@ const MyCart = () => {
     return (
         <div className='px-10 py-10  w-full'>
             <CommonTitle shortTitle='--- My Cart ---' Heading='Wanna Add More'></CommonTitle>
-            <div className='flex flex-grow justify-between items-center'>
+            <div className='mt-10 flex flex-grow justify-between items-center'>
                 <h3 className='text-4xl uppercase font-bold'>Total Items: {cart.length}</h3>
                 <h3 className='text-4xl uppercase font-bold'>Total Price: {total}</h3>
                 <h3 className='text-4xl uppercase bg-[#D1A054] p-2 rounded-xl text-white font-bold'>Pay</h3>
